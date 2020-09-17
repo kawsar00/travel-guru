@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Destination.css';
 import { Button, Form, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { LocationContext } from '../../App';
 
 
 const Destination = () => {
+  const [place, setPlace] = useContext(LocationContext)
   return (
     <div style={{ padding: '100px' }} className="row d-flex justify-content-between">
       <div className="col-md-5">
-        <h1 style={{ fontSize: '50px' }} className="text-white font-weight-bold">Lorem ipsum dolor sit amet.</h1>
+  <h1 style={{ fontSize: '50px' }} className="text-white font-weight-bold">{place}</h1>
         <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt omnis mollitia quis at, delectus inventore porro. Veritatis doloremque reprehenderit incidunt dolorum dolor? Incidunt dolorum explicabo velit molestiae ducimus corrupti rerum.</p>
 
       </div>
@@ -21,7 +23,7 @@ const Destination = () => {
 
           <Form.Group>
             <Form.Label className="text-muted">Destination</Form.Label>
-            <Form.Control type="text" />
+            <Form.Control className="font-weight-bold" type="text" placeholder={place}/>
           </Form.Group>
           <Form.Row>
             <Form.Group as={Col}>

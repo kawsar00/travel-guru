@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
 import {
@@ -14,11 +14,14 @@ import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
 
 
-
+export const LocationContext = createContext()
 
 function App() {
+  const [place, setPlace] = useState('coxbazar')
   return (
     <div className="bg-img">
+      
+      <LocationContext.Provider value={[place, setPlace]}>
     <Router>
     <Header></Header>
       <Switch>
@@ -45,6 +48,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </LocationContext.Provider>
     </div>
   );
 }
