@@ -1,0 +1,15 @@
+.linkText {
+  color: white;
+  font-size: 20px;
+  margin-right: 40px;
+}
+.navBar img {
+  margin-left: 70px;
+  margin-right: 50px;
+}
+.linkText:hover{
+  color: white;
+}
+.nav-link{
+  padding: 0;
+}

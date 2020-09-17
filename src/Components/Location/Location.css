@@ -1,0 +1,14 @@
+.location-img img{
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+}
+.location-img img:hover {
+  border: 3px solid orange;
+  cursor: pointer;
+}
+.location-img h3 {
+  bottom: 20px;
+  position: absolute;
+  left: 25px;
+}
