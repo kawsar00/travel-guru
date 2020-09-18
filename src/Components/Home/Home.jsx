@@ -22,7 +22,10 @@ const Home = () => {
   },[place])
 
   return (
+    <div>
+      <Header></Header>
     <div style={{ padding: '100px' }} className="row">
+       
     <div className="col-md-4">
      {
         location.map(location => <Location location={location}></Location>)
@@ -42,6 +45,7 @@ const Home = () => {
         <h3 className="text-white font-weight-bold">SUNDARBAN</h3>
       </div>
     </div>
+  </div>
   </div>
   );
 };

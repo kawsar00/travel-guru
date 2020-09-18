@@ -3,11 +3,15 @@ import './Destination.css';
 import { Button, Form, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LocationContext } from '../../App';
+import Header from '../Header/Header';
+
 
 
 const Destination = () => {
   const [place, setPlace] = useContext(LocationContext)
   return (
+    <div>
+      <Header></Header>
     <div style={{ padding: '100px' }} className="row d-flex justify-content-between">
       <div className="col-md-5">
   <h1 style={{ fontSize: '50px' }} className="text-white font-weight-bold">{place}</h1>
@@ -42,6 +46,7 @@ const Destination = () => {
           
         </Form>
       </div>
+    </div>
     </div>
   );
 };

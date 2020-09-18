@@ -23,7 +23,7 @@ function App() {
       
       <LocationContext.Provider value={[place, setPlace]}>
     <Router>
-    <Header></Header>
+   
       <Switch>
         <Route path="/home">
         <Home></Home>
