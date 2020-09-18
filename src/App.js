@@ -1,29 +1,33 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import Home from './Components/Home/Home';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 import NoMatch from './Components/NoMatch/NoMatch';
 import Destination from './Components/Destination/Destination';
 import Booking from './Components/Booking/Booking';
 import Login from './Components/Login/Login';
-import Header from './Components/Header/Header';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import fakeData from './FakeData/FakeData'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 
 export const LocationContext = createContext()
 
 function App() {
-  const [place, setPlace] = useState('coxbazar')
+  const [place, setPlace] = useState("cox's bazar")
+  const [selectedPlace, setSelectedPlace] = useState(null)
+  useEffect(()=>{
+    const matchLocation = fakeData.find(data => data.location === place)
+    setSelectedPlace(matchLocation)
+  },[place])
   return (
     <div className="bg-img">
-      
-      <LocationContext.Provider value={[place, setPlace]}>
+      <LocationContext.Provider value={[{place, setPlace, selectedPlace}]}>
     <Router>
-   
       <Switch>
         <Route path="/home">
         <Home></Home>
@@ -38,7 +42,7 @@ function App() {
         <Destination></Destination>
         </Route>
         <Route path="/contact">
-        <Booking></Booking>
+          <Booking></Booking>
         </Route>
         <Route path="/login">
         <Login></Login>
