@@ -43,18 +43,9 @@ var fakeData = [
     title: "SREEMONGOL",
     description: "Sreemangal is known as the tea capital of Bangladesh. It covers an overall are of 450 sq. km. The opulent green tea plantation attracts most tourists.It is famous mostly for its long natural sandy beach,tourism centre and district headquarters.",
     subPlace: [
+     
       {
-        id: 3,
-        service: "4 guests 2 bedrooms 2 beds 2 baths",
-        offer: "Cancellation fexibility availiable",
-        condition: "Wif Air conditioning Kitchen",
-        price: "$34/night",
-        title: "Light bright airy stylish apt & safe peaceful stay",
-        star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
-      },
-      {
-        id: 4,
+        id: 6,
         condition: "Wif Air conditioning Kitchen",
         service: "4 guests 2 bedrooms 2 beds 2 baths",
         title: "Apartment in Lost Panorama",
@@ -64,7 +55,17 @@ var fakeData = [
         image: "https://i.ibb.co/b5dZ6jb/Rectangle-27.png"
       },
       {
-        id: 5,
+        id: 7,
+        service: "4 guests 2 bedrooms 2 beds 2 baths",
+        offer: "Cancellation fexibility availiable",
+        condition: "Wif Air conditioning Kitchen",
+        price: "$34/night",
+        title: "Light bright airy stylish apt & safe peaceful stay",
+        star: "https://i.ibb.co/zXmtZgL/star-1.png",
+        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
+      },
+      {
+        id: 8,
         condition: "Wif Air conditioning Kitchen",
         offer: "Cancellation fexibility availiable",
         service: "4 guests 2 bedrooms 2 beds 2 baths",
@@ -72,7 +73,7 @@ var fakeData = [
         title: "AR Lounge & Pool (r&r + b&b)",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
         image: "https://i.ibb.co/RyNDRFv/Rectangle-28.png"
-      }
+      },
     ]
   },
   {
@@ -82,17 +83,17 @@ var fakeData = [
     description: "The Sundarbans mangrove forest, one of the largest such forests in the world (140,000 ha), lies on the delta of the Ganges, Brahmaputra and Meghna rivers on the Bay of Bengal.It is famous mostly for its long natural sandy beach.",
     subPlace: [
       {
-        id: 3,
-        service: "4 guests 2 bedrooms 2 beds 2 baths",
-        offer: "Cancellation fexibility availiable",
+        id: 9,
         condition: "Wif Air conditioning Kitchen",
-        price: "$34/night",
-        title: "Light bright airy stylish apt & safe peaceful stay",
+        offer: "Cancellation fexibility availiable",
+        service: "4 guests 2 bedrooms 2 beds 2 baths",
+        price: "$52/night",
+        title: "AR Lounge & Pool (r&r + b&b)",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
+        image: "https://i.ibb.co/RyNDRFv/Rectangle-28.png"
       },
       {
-        id: 4,
+        id: 10,
         condition: "Wif Air conditioning Kitchen",
         service: "4 guests 2 bedrooms 2 beds 2 baths",
         title: "Apartment in Lost Panorama",
@@ -102,15 +103,16 @@ var fakeData = [
         image: "https://i.ibb.co/b5dZ6jb/Rectangle-27.png"
       },
       {
-        id: 5,
-        condition: "Wif Air conditioning Kitchen",
-        offer: "Cancellation fexibility availiable",
+        id: 11,
         service: "4 guests 2 bedrooms 2 beds 2 baths",
-        price: "$52/night",
-        title: "AR Lounge & Pool (r&r + b&b)",
+        offer: "Cancellation fexibility availiable",
+        condition: "Wif Air conditioning Kitchen",
+        price: "$34/night",
+        title: "Light bright airy stylish apt & safe peaceful stay",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/RyNDRFv/Rectangle-28.png"
-      }
+        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
+      },
+      
     ]
   }
 ]

@@ -18,6 +18,10 @@ import {
 export const LocationContext = createContext()
 
 function App() {
+  const [user, setUser] = useState({
+    isSignIn: false,
+    name: '',
+    email:'',})
   const [place, setPlace] = useState("cox's bazar")
   const [selectedPlace, setSelectedPlace] = useState(null)
   useEffect(()=>{
@@ -26,7 +30,7 @@ function App() {
   },[place])
   return (
     <div className="bg-img">
-      <LocationContext.Provider value={[{place, setPlace, selectedPlace}]}>
+      <LocationContext.Provider value={[{place, setPlace, selectedPlace, user, setUser}]}>
     <Router>
       <Switch>
         <Route path="/home">
@@ -41,9 +45,9 @@ function App() {
         <Route path="/destination">
         <Destination></Destination>
         </Route>
-        <Route path="/contact">
+        <PrivateRoute path="/contact">
           <Booking></Booking>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
         <Login></Login>
         </Route>

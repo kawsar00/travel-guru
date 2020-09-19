@@ -5,7 +5,7 @@ import logo2 from '../../Image/Logo2.png'
 import { Link } from 'react-router-dom';
 
 
-const HeaderTwo = ({handleGoogleLogOut}) => {
+const HeaderTwo = () => {
   return (
       <Navbar expand="lg">
         <Navbar.Brand href="#home" className="py-4 navBar">
@@ -18,7 +18,7 @@ const HeaderTwo = ({handleGoogleLogOut}) => {
             <Nav><Link to="/destination"  className="linkTextTwo">Destination</Link ></Nav>
             <Nav><Link to="/blog"  className="linkTextTwo">Blog</Link ></Nav>
             <Nav><Link to="/contact"  className="linkTextTwo">Contact</Link ></Nav>
-            <Link onClick={handleGoogleLogOut} to="/login"> <button className="btn btn-warning">Log Out</button></Link> 
+            <Link to="/login"> <button className="btn btn-warning">Log Out</button></Link> 
           </Nav>
         </Navbar.Collapse>
       </Navbar>

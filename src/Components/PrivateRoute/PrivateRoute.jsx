@@ -1,13 +1,15 @@
-import userEvent from '@testing-library/user-event';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { LocationContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
+  const [{ user }] = useContext(LocationContext)
+
   return (
     <Route
       {...rest}
       render={({ location }) =>
-       userEvent.email ? (
+      user.email ? (
           children
         ) : (
           <Redirect

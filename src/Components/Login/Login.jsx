@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import HeaderTwo from '../HeaderTwo/HeaderTwo';
 import './Login.css'
 import * as firebase from "firebase/app";
@@ -9,20 +9,16 @@ import { Button, Input } from 'semantic-ui-react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import fbImg from '../../Icon/fb.png'
 import googleImg from '../../Icon/google.png'
+import { LocationContext } from '../../App';
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
 
 const Login = () => {
-  const [newUser] = useState(false)
-  const [isLoginForm, setIsLoginForm] = useState(false)
-  const [user, setUser] = useState({
-    isSignIn: false,
-    name: '',
-    email:'',
+  const [{ user, setUser }] = useContext(LocationContext)
+  const [newUser, setNewUser] = useState(false)
 
-  })
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
@@ -76,7 +72,14 @@ const handleFbSignIn = () => {
   firebase.auth().signInWithPopup(fbProvider)
   .then(res => {
     // The signed-in user info.
-    const user = res.user;
+    const { displayName, email } = res.user;
+      const signInUser = {
+          isSignIn: true,
+          name: displayName,
+          email: email,
+      }
+      setUser(signInUser)
+      history.replace(from);
     // ...
     console.log('facebook user information', user)
   }).catch(function(error) {
@@ -86,101 +89,101 @@ const handleFbSignIn = () => {
     console.log(errorCode, errorMessage)
   });
 }
+//********************END FACEBOOK SIGN IN ********************** */
 
-
-//update user name 
-const UpdateUserInfo = name => {
-  var user = firebase.auth().currentUser;
-
-  user.updateProfile({
-  displayName: name
-  })
-  .then(function() {
-      console.log('user update successfully')
-  })
-  .catch(function(error) {
-      console.log(error)
-  });
-}
 //****************USER EMAIL, PASSWORD SIGN IN & SIGN OUT**************** */
 
 //____________code for sign in and sign up user_________________________
+//function for sign up form
 const handleSubmit = (e) => {
+  // console.log(user.email, user.password)
+
+  // this code for the sign up user
   if (newUser && user.email && user.password) {
-   //sign up user code
-      firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-          .then(res => {
-              const newUserInfo = { ...user }
-              newUserInfo.error = ''
-              newUserInfo.success = true
-              setUser(newUserInfo)
-              UpdateUserInfo(user.name)
-          })
-          .catch(function (error) {
-              const newUserInfo = { ...user }
-              newUserInfo.error = error.message
-              newUserInfo.success = false
-              setUser(newUserInfo)
-          });
-  }
-   //sign in user code
-  if (!newUser && user.email && user.password) {
-      firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+    firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
       .then(res => {
-          const newUserInfo = { ...user }
-          newUserInfo.error = ''
-          newUserInfo.success = true
-          setUser(newUserInfo)
-          console.log('sign in user info', res.user)
+        const newUserInfo = { ...user }
+        newUserInfo.error = ''
+        newUserInfo.success = true
+        setUser(newUserInfo)
+        updateUseName(user.name)
       })
-      .catch(function(error) {
-          const newUserInfo = { ...user }
-          newUserInfo.error = error.message
-          newUserInfo.success = false
-          setUser(newUserInfo)
-        });
+      .catch(error => {
+        const newUserInfo = { ...user }
+        newUserInfo.error = error.message
+        newUserInfo.success = false
+        setUser(newUserInfo)
+      });
   }
-  
+
+  // this code for the sign in user
+  if (!newUser && user.email && user.password) {
+    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+      .then(res => {
+        const newUserInfo = { ...user }
+        newUserInfo.error = ''
+        newUserInfo.success = true
+        setUser(newUserInfo)
+        console.log('Sign in user info', res.user)
+      })
+      .catch(error => {
+        const newUserInfo = { ...user }
+        newUserInfo.error = error.message
+        newUserInfo.success = false
+        setUser(newUserInfo)
+      });
+  }
   e.preventDefault()
+}
+//**************END USER EMAIL, PASSWORD SIGN IN & SIGN OUT************** */
+
+//update user name and other information
+const updateUseName = name => {
+  var user = firebase.auth().currentUser;
+
+  user.updateProfile({
+    displayName: name
+  }).then(res => {
+    console.log('User name update successfully')
+  })
+  .catch(error => {
+    console.log(error)
+  });
 }
 
 //_______________________handle blur function_________________________
 const handleBlur = (e) => {
-console.log(e.target.value, e.target.name)
-
-  let isFieldValid = true
-  if(e.target.name === 'email') {
-    isFieldValid = /\S+@\S+\.\S+/.test(e.target.value) 
-    console.log(isFieldValid)
+  // console.log(e.target.name, e.target.value) //to show this event value with name
+  let isFieldValid = true;
+  if (e.target.name === 'email') {
+    isFieldValid = /\S+@\S+\.\S+/.test(e.target.value) //use regular expression for email validation
   }
-  if(e.target.name === 'password') {
-    const isPasswordValid = e.target.value.length > 6 //must be more than 6 digit
-    const PasswordHasNumber = /\d{1}/.test(e.target.value) // should have minimum 1 number
-    isFieldValid = isPasswordValid && PasswordHasNumber
-    console.log(isPasswordValid, PasswordHasNumber)
+  if (e.target.name === 'password') {
+    const isPasswordValid = e.target.value.length > 6 //pass. should be more than 6 characters
+    const passwordHasNumber = /\d{1}/.test(e.target.value) // should have minimum 1 number
+    isFieldValid = isPasswordValid && passwordHasNumber
   }
   if (isFieldValid) {
-    const newUserInfo = {...user}
+    const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
     setUser(newUserInfo)
   }
-  }
-//**************END USER EMAIL, PASSWORD SIGN IN & SIGN OUT************** */
-
-
+}
   return (
     <div className="back-img">
-     { <HeaderTwo handleGoogleLogOut ={handleGoogleLogOut}></HeaderTwo>}
-      <div className="p-4 text-center">
-      <p style={{color:"red"}}>{user.error}</p>
-        {user.success && <p style={{color:"green"}}>User {newUser ? 'Created' : 'LoggedIn'}  Successfully</p>}
-
+     <HeaderTwo />
+     <div className="p-4 text-center">
+       {/* to show successful/error message on screen */}
+      <p style={{ color: 'red' }}>{user.error}</p>
+      {
+        user.success && <p style={{ color: 'green' }}>User {newUser ? 'created' : 'Logged In'} successfully</p>
+      }
       </div>
       <MDBContainer>
         <MDBRow>
           <MDBCol md="5" className="from-style">
             {
-              isLoginForm ?
+              newUser ?
               <form onSubmit={handleSubmit}>
               <p className="h5 text-center mb-4 font-weight-bold">Log In</p>
               <div className="grey-text font-weight-bold">
@@ -195,7 +198,7 @@ console.log(e.target.value, e.target.name)
                 <Button className="btn btn-warning w-100 font-weight-bold">Login</Button>
               </div>
               <div className="text-center mt-3">
-                <span className="">Don’t have an account?</span> <span><Link className="text-warning font-weight-bold" onClick={()=>setIsLoginForm(false)}>Create an account</Link> </span>
+                <span className="">Don’t have an account?</span> <span><Link className="text-warning font-weight-bold" onClick={()=>setNewUser(false)}>Create an account</Link> </span>
                 </div>
             </form>
             :
@@ -212,7 +215,7 @@ console.log(e.target.value, e.target.name)
                 <Button className="btn btn-warning w-100">Register</Button>
               </div>
               <div className="text-center mt-3">
-                <span className="">Already have an account?</span> <span><Link  className="text-warning font-weight-bold" onClick={()=>setIsLoginForm(true)}>Login</Link> </span>
+                <span className="">Already have an account?</span> <span><Link  className="text-warning font-weight-bold" onClick={()=>setNewUser(true)}>Login</Link> </span>
                 </div>
             </form>
             }
