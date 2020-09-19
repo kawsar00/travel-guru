@@ -1,11 +1,10 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import './Location.css';
 import { Link } from 'react-router-dom';
 import { LocationContext } from '../../App';
 
-
 const Location = (props) => {
-  const [{selectedPlace}] = useContext(LocationContext)
+  const [{ selectedPlace }] = useContext(LocationContext)
   return (
     <div>
       <h1 style={{ fontSize: '50px' }} className="text-white font-weight-bold">{selectedPlace.title}</h1>

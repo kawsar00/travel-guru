@@ -21,11 +21,12 @@ button.btn-default.btn.Ripple-parent {
   margin-top: -100px;
 }
 
-a.logIn {
+span.logIn {
   width: 390px;
   display: block;
   border-radius: 15px;
   margin: auto;
   border: 1px solid gray;
   padding: 5px;
+  cursor: pointer;
 }

@@ -14,7 +14,7 @@ const Booking = () => {
         <div className="col-md-6">
           {
             selectedPlace && selectedPlace.subPlace &&
-            selectedPlace.subPlace.map(place => <SubPlaceContainer place={place} />)
+            selectedPlace.subPlace.map(place => <SubPlaceContainer place={place} key={place.id} />)
           }
         </div>
         <div className="col-md-6">

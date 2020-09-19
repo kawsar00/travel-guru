@@ -18,19 +18,17 @@ import {
 export const LocationContext = createContext()
 
 function App() {
-  const [user, setUser] = useState({
-    isSignIn: false,
-    name: '',
-    email:'',})
+  const [loggedInUser, setLoggedInUser] = useState({})
   const [place, setPlace] = useState("cox's bazar")
   const [selectedPlace, setSelectedPlace] = useState(null)
   useEffect(()=>{
     const matchLocation = fakeData.find(data => data.location === place)
     setSelectedPlace(matchLocation)
   },[place])
+
   return (
     <div className="bg-img">
-      <LocationContext.Provider value={[{place, setPlace, selectedPlace, user, setUser}]}>
+      <LocationContext.Provider value={[{place, setPlace, selectedPlace, loggedInUser, setLoggedInUser}]}>
     <Router>
       <Switch>
         <Route path="/home">

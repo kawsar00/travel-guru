@@ -14,11 +14,10 @@ const Home = () => {
     <div>
       <Header></Header>
       <div style={{ padding: '100px' }} className="row">
-
         <div className="col-md-4">
           {
             selectedPlace &&
-            <Location></Location>
+            <Location />
           }
         </div>
         <div className="col-md-8 d-flex location-img">
