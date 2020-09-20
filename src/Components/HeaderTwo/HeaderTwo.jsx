@@ -16,9 +16,9 @@ const HeaderTwo = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav><Link to="/news"  className="linkTextTwo">News</Link > </Nav>
+            <Nav><Link to="/home"  className="linkTextTwo">Home</Link > </Nav>
             <Nav><Link to="/destination"  className="linkTextTwo">Destination</Link ></Nav>
-            <Nav><Link to="/blog"  className="linkTextTwo">Blog</Link ></Nav>
+            <Nav><Link to="/#"  className="linkTextTwo">Blog</Link ></Nav>
             <Nav><Link to="/contact"  className="linkTextTwo">Contact</Link ></Nav>
             <Link onClick ={()=> setLoggedInUser({})} to="/login"> <button className="btn btn-warning">Log Out</button></Link> 
           </Nav>
