@@ -39,7 +39,7 @@ const Destination = () => {
                   <Form.Control type="date" />
                 </Form.Group>
               </Form.Row>
-              <Link to="/contact"><Button className="w-100" variant="warning" type="submit">
+              <Link to="/contact"><Button className="w-100 text-dark" variant="warning" type="submit">
                 Start Booking
               </Button></Link>
             </Form>

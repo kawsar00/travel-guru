@@ -167,7 +167,7 @@ const Login = () => {
                   {newUser && <MDBInput onBlur={handleBlur} label="Last Name" name="name" group type="text" required />}
                   <MDBInput onBlur={handleBlur} name="email" label="Username or Email" group type="email" required />
                   <MDBInput onBlur={handleBlur} label="Password" name="password" group type="password" required />
-                  <small>Password minimum 6 characters (include; a number and letter)</small>
+                  <small className="text-danger">Password minimum 6 characters (include; a number and letter)</small>
                   {newUser && <MDBInput onBlur={handleBlur} label="Confirm Password" name="password" group type="password" required />}
                 </div>
                 {!newUser && <div className='my-4 d-flex justify-content-between'>
