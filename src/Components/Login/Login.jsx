@@ -191,7 +191,7 @@ const Login = () => {
         </MDBRow>
       </MDBContainer>
       <div className="otherLogIn">
-        <span className="text-center mb-4 d-block">or</span>
+        <span className="text-center mb-4 d-block ">or</span>
         <span onClick={handleFbSignIn} className="logIn text-dark font-weight-bold"><img style={{ width: '23px', marginRight: '80px' }} src={fbImg} alt="" />Continue with Facebook</span> <br />
         <span onClick={handleGoogleLogIn} className="logIn text-dark font-weight-bold"><img style={{ width: '23px', marginRight: '80px' }} src={googleImg} alt="" />Continue with Google</span>
       </div>

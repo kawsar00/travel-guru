@@ -52,7 +52,7 @@ var fakeData = [
         price: "$48/day",
         offer: "Cancellation fexibility availiable",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/b5dZ6jb/Rectangle-27.png"
+        image: "https://i.ibb.co/KzzjgPg/215570818.jpg"
       },
       {
         id: 7,
@@ -62,7 +62,7 @@ var fakeData = [
         price: "$34/night",
         title: "Light bright airy stylish apt & safe peaceful stay",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
+        image: "https://i.ibb.co/BPwNZyN/anjali-travels-hotels.jpg",
       },
       {
         id: 8,
@@ -72,7 +72,7 @@ var fakeData = [
         price: "$52/night",
         title: "AR Lounge & Pool (r&r + b&b)",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/RyNDRFv/Rectangle-28.png"
+        image: "https://i.ibb.co/HNQNYBT/download.jpg"
       },
     ]
   },
@@ -90,7 +90,7 @@ var fakeData = [
         price: "$52/night",
         title: "AR Lounge & Pool (r&r + b&b)",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/RyNDRFv/Rectangle-28.png"
+        image: "https://i.ibb.co/mGgt0fR/Sundarban-Package-Bed-Room.jpg"
       },
       {
         id: 10,
@@ -100,7 +100,7 @@ var fakeData = [
         price: "$48/day",
         offer: "Cancellation fexibility availiable",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/b5dZ6jb/Rectangle-27.png"
+        image: "https://i.ibb.co/yQbg6ZY/Sunderban-Mangrove-Retreat.png"
       },
       {
         id: 11,
@@ -110,7 +110,7 @@ var fakeData = [
         price: "$34/night",
         title: "Light bright airy stylish apt & safe peaceful stay",
         star: "https://i.ibb.co/zXmtZgL/star-1.png",
-        image: "https://i.ibb.co/fvyPb93/Rectangle-26.png",
+        image: "https://i.ibb.co/ckhSbGG/sunderban-tiger-camp3.jpg",
       },
       
     ]
