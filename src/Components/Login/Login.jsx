@@ -175,12 +175,12 @@ const Login = () => {
                   <div><span style={{ cursor: 'pointer' }} className="text-warning font-weight-bold">Forget Password</span></div>
                 </div>}
                 <div className="text-center">
-                  <button className="btn btn-warning w-100 font-weight-bold">{newUser ? 'Register' : 'Login'}</button>
+                  <button className="btn btn-warning w-100 font-weight-bold text-dark ">{newUser ? 'Register' : 'Login'}</button>
                 </div>
                 <div className="text-center mt-3">
                   <span className="">{newUser ? 'Already have an account?' : 'Don’t have an account?'}</span>
                   {newUser ?
-                    <span style={{ cursor: 'pointer' }} className="text-warning font-weight-bold" onClick={() => setNewUser(false)}> Log In</span>
+                    <span style={{ cursor: 'pointer' }} className="text-warning font-weight-bold " onClick={() => setNewUser(false)}> Log In</span>
                     :
                     <span style={{ cursor: 'pointer' }} className="text-warning font-weight-bold" onClick={() => setNewUser(true)}> Create an account</span>
                   }

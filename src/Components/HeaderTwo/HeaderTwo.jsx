@@ -20,7 +20,7 @@ const HeaderTwo = () => {
             <Nav><Link to="/destination"  className="linkTextTwo">Destination</Link ></Nav>
             <Nav><Link to="/#"  className="linkTextTwo">Blog</Link ></Nav>
             <Nav><Link to="/contact"  className="linkTextTwo">Contact</Link ></Nav>
-            <Link onClick ={()=> setLoggedInUser({})} to="/login"> <button className="btn btn-warning">Log Out</button></Link> 
+            <Link onClick ={()=> setLoggedInUser({})} to="/login"> <button className="btn btn-warning text-dark ">Log Out</button></Link> 
           </Nav>
         </Navbar.Collapse>
       </Navbar>

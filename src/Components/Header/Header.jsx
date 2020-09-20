@@ -22,7 +22,7 @@ const Header = () => {
           <Nav><Link to="/destination" className="linkText">Destination</Link ></Nav>
           <Nav><Link to="/#" className="linkText">Blog</Link ></Nav>
           <Nav><Link to="/contact" className="linkText">Contact</Link ></Nav>
-          <Link to="/login"> <button className="btn btn-warning">Login</button></Link>
+          <Link to="/login"> <button className="btn btn-warning text-dark ">Login</button></Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
