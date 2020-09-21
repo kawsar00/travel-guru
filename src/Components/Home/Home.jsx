@@ -14,22 +14,22 @@ const Home = () => {
     <div>
       <Header></Header>
       <div style={{ padding: '100px' }} className="row">
-        <div className="col-md-4">
+        <div className="col-md-4 col-12">
           {
             selectedPlace &&
             <Location />
           }
         </div>
-        <div className="col-md-8 d-flex location-img">
-          <div onClick={() => setPlace("cox's bazar")} className="col-md-4">
+        <div className="col-md-8 col-12 d-flex location-img">
+          <div onClick={() => setPlace("cox's bazar")} className="col-md-4 col-12">
             <img src={coxBazar} alt="" />
             <h3 className="text-white font-weight-bold">COX'S BAZAR</h3>
           </div>
-          <div onClick={() => setPlace('sreemongol')} className="col-md-4">
+          <div onClick={() => setPlace('sreemongol')} className="col-md-4 col-12">
             <img src={sreemongol} alt="" />
             <h3 className="text-white font-weight-bold">SREEMONGOL</h3>
           </div>
-          <div onClick={() => setPlace('sundarban')} className="col-md-4">
+          <div onClick={() => setPlace('sundarban')} className="col-md-4 col-12">
             <img src={sundorbon} alt="" />
             <h3 className="text-white font-weight-bold">SUNDARBAN</h3>
           </div>
