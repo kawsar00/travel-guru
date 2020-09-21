@@ -15,11 +15,11 @@ const Destination = () => {
       {
         selectedPlace &&
         <div style={{ padding: '100px' }} className="row d-flex justify-content-between">
-          <div className="col-md-5">
+          <div className="col-md-5 col-12">
             <h1 style={{ fontSize: '50px' }} className="text-white font-weight-bold">{selectedPlace.title}</h1>
             <p className="text-white">{selectedPlace.description}</p>
           </div>
-          <div className="col-md-5 booking-form">
+          <div className="col-md-5 col-12 booking-form">
             <Form>
               <Form.Group >
                 <Form.Label className="text-muted">Origin</Form.Label>
