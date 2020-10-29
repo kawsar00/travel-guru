@@ -14,7 +14,6 @@ It's a single page web application where any traveler can book his / her desirab
 ### Thechnology Used
 * React.js
 * React-hook-form
-* React-slick-carousal
 * React-router
 * Context API
 * Material UI
