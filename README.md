@@ -2,7 +2,7 @@
 ### A Simple Travel Management web Application
 It's a single page web application where any traveler can book his / her desirable location and hotel room info.
 
-[Live Website](https://travel-guru-site.netlify.app/)
+[Live Website](https://travel-guru-site.netlify.app/) |
 
 ### Features
 * Single Page Application (SPA)
